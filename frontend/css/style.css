@@ -1,0 +1,84 @@
+:root {
+  --border-color: rgb(25, 156, 46);
+  --title-text-color: #8ef124;
+  --card-background: #1f1f1f;
+  --text-color: #f1f1f1;
+}
+
+body {
+  background-color: var(--card-background);
+  color: var(--text-color);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.shelter-cards-container {
+    margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.shelter-card {
+  background-color: #2f2f2f;
+  border-radius: 20px;
+  flex-grow: 0;
+  flex-shrink: 2;
+  width: 300px;
+  box-shadow: 2px 2px 5px 0px rgba(10, 10, 10, 0.9);
+  border-color: var(--border-color);
+  border-width: 4px;
+  border-style: solid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.shelter-card-name {
+  color: var(--title-text-color);
+  margin: 20px 20px 0px 20px;
+}
+
+.shelter-card-address {
+    margin: 0px 30px;
+    text-align: left;
+    align-self: flex-start;
+}
+
+.shelter-card > p,
+.shelter-card > h3 {
+  margin-bottom: 10px;
+}
+
+.shelter-card-animal-counts {
+  display: flex;
+  flex-direction: row;
+  align-self: stretch;
+  justify-content: space-evenly;
+  background-color: var(--border-color);
+  border-radius: 0px 0px 15px 15px;
+}
+
+.shelter-card-animal-label {
+    font-size: 2em;
+}
+
+.shelter-card-animal-number {
+    font-size: 1.5em;
+}
+
+header > h1 {
+  text-align: center;
+}
+
+main > h2 {
+  text-align: center;
+}

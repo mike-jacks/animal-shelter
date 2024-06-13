@@ -1,5 +1,10 @@
 from fastapi import FastAPI, HTTPException, status
 from models import Animal, Shelter, UpdateShelterRequest, PatchShelterRequest
+from fastapi.middleware.cors import CORSMiddleware
+
+
+
+
 
 # Make the pydantic model `Shelter` that will represent this data, then manually
 # change this list to be a list[Shelter]. You don't need to write code to convert
@@ -38,6 +43,16 @@ shelters: list[Shelter] = [
 ]
 
 app = FastAPI()
+
+origins = ["*"]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get("/shelters", response_model=list[Shelter], status_code=status.HTTP_200_OK, tags=["Shelters"])
 async def get_shelters() -> list[Shelter]:
